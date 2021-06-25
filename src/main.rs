@@ -9,9 +9,8 @@ struct CSVReader {
 
 impl CSVReader {
     fn read(&self) -> Vec<Vec<String>> {
-        let lines = self.content.split('\n');
         let mut result: Vec<Vec<String>> = vec![];
-        for line in lines {
+        for line in self.content.split('\n') {
             let mut parsed_line: Vec<String> = vec![];
             for field in line.split(self.comma) {
                 parsed_line.push(String::from(field));
